@@ -1,0 +1,145 @@
+//Variables
+$font-family: 'Roboto', sans-serif;
+$font-size: 14px;
+$body-bg: #422364;
+$form-bg: #fff;
+$primary-color: #e7572c;
+$secondary-color: lighten($body-bg, 20%);
+$input-bg : darken($form-bg, 7%);
+$input-padding: 10px 12px;
+
+::-webkit-input-placeholder{
+  color: $secondary-color;  
+	opacity: 0.9;
+}
+::-moz-placeholder {
+	color: $secondary-color;   
+	opacity: 0.9;
+}
+
+body{
+  margin:0;
+  height: 100%;
+  background: $body-bg;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: 1.4; 
+	color: lighten($secondary-color, 10%);
+}
+a {
+  color: $primary-color;
+  //active, hover, focus
+  &:hover, &:focus, &:active{
+    color: $primary-color;  
+    text-decoration: underline;
+  }
+}
+input{
+  font-family: $font-family;
+  font-size: $font-size;
+	outline: none;
+}
+.outer{
+  margin-top: 5%;
+}
+.container{
+  max-width: 420px;
+  width: 100%;
+  margin: auto;    
+  //form
+  .form{
+    background: $form-bg;
+    border-radius: 4px;
+    padding: 20px;
+		box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+  }
+}
+h1{
+  color: lighten($secondary-color, 10%);
+  text-align: center;
+  padding-bottom: 10px;
+	font-weight: lighter;
+}
+.input{  
+  display: block;
+  width: 100%;
+	background: $input-bg;
+  color: $secondary-color;
+  padding: $input-padding;
+  border-radius: 3px;
+  border: solid 1px;
+	border-color: transparent;
+	transition: all 0.3s ease-in;
+	//:focus
+	&:focus{
+		color: lighten($secondary-color, 10%);
+		background: #fff;
+		border-color: $primary-color;
+	}
+}
+.submit {
+  background: $primary-color;
+  color: #fff;
+  cursor: pointer;
+  padding: $input-padding;
+  display: block;
+  width: 100%;
+  border-radius: 3px;        
+  border: none;    
+  font-weight: bold;
+  text-transform: uppercase;    
+  margin: 0;	
+	text-shadow: 0px 1px 1px darken($primary-color, 10%);
+	transition: all 0.3s linear; 
+	//:active, :focus, :hover
+	&:active, &:focus, &:hover{
+		background: darken($primary-color, 10%);
+	}
+	//:active, :focus
+	&:active, &:focus{		
+		box-shadow: inset 0px 1px 2px darken($primary-color, 20%);
+	}
+}
+.split{
+  display: none;
+}
+label{
+  color: $secondary-color;	
+}
+#infinity {
+	position: relative;
+	width: 125px;
+	height: 70px;
+	margin: auto;		
+}
+
+#infinity:before,
+#infinity:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border: 16px solid $primary-color;
+    -moz-border-radius: 50px 50px 0 50px;
+         border-radius: 50px 50px 0 50px;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);	
+}
+
+#infinity:after {
+    left: auto;
+    right: 0;
+    -moz-border-radius: 50px 50px 50px 0;
+         border-radius: 50px 50px 50px 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+					
